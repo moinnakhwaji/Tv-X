@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    color: #fff;
+}
+/* Apply scrollbar customizations only to specific elements */
+
+
+
+
+
+/* .select {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    margin: 10px 0;
+    background-color: #27272A;
+    border: 1px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .select select {
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #27272A;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+  }
+  
+  .select select::-ms-expand {
+    display: none;
+  }
+  
+  .select select:focus {
+    outline: none;
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.5);
+  }
+  
+  .select select::placeholder {
+    color: #999;
+  }
+  
+  .select option {
+    background-color: #27272A;
+    padding: 8px 12px;
+    color: #fff;
+    white-space: nowrap;
+  } */
+
+
+  /* For WebKit-based browsers like Chrome */
+.scrollable-element::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+  background: #1F1E24;
+  border-radius: 10px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb:hover {
+  background: #6556CD !important;
+}
+
+/* For Mozilla-based browsers like Firefox */
+.scrollable-element {
+  scrollbar-width: thin;
+  scrollbar-color: #1F1E24 #6556CD;
+}
+
+.scrollable-element::-moz-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.scrollable-element::-moz-scrollbar-thumb {
+  background: #1F1E24;
+  border-radius: 10px;
+}
+
+.scrollable-element::-moz-scrollbar-thumb:hover {
+  background: #6556CD !important;
+}

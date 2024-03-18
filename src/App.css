@@ -1,0 +1,36 @@
+/* #1F1E24 */
+/* #6556CD */
+
+.scrollable-element::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb {
+    background:#1F1E24 ;
+    border-radius: 10px;
+}
+
+.scrollable-element::-webkit-scrollbar-thumb:hover {
+    background: #6556CD !important;
+}
+
+/* Add support for other browsers */
+.scrollable-element {
+    scrollbar-width: thin;
+    scrollbar-color: #1F1E24 #6556CD;
+}
+
+.scrollable-element::-moz-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.scrollable-element::-moz-scrollbar-thumb {
+    background:#1F1E24 ;
+    border-radius: 10px;
+}
+
+.scrollable-element::-moz-scrollbar-thumb:hover {
+    background: #6556CD !important;
+}
