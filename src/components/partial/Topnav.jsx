@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/axios";
 import noimage from "/no-image.jpg";
@@ -7,6 +7,7 @@ function Topnav() {
   const [query, setQuery] = useState("");
   const [search, setSearch] = useState([]);
   const title = "movie"; // Assuming default title is "movie"
+  const inputRef = useRef(null); // Create a reference for the input field
 
   const getSearchResults = async () => {
     try {
@@ -21,23 +22,30 @@ function Topnav() {
     getSearchResults();
   }, [query]);
 
+  // Function to clear the input field and reset the query state
+  const clearInput = () => {
+    setQuery("");
+    inputRef.current.value = ""; // Clear the input field
+  };
+
   return (
     <div className="relative w-full h-[10vh] text-white text-2xl flex justify-center items-center">
       <i className="ri-search-fill text-zinc-400 mx-4"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
-        va
+        ref={inputRef} // Attach the reference to the input field
         className="text-xl border-none outline-none p-2 rounded-md  w-full lg:w-[70%] xlg:w-[60%]  text-white"
         type="text"
         placeholder="Search here..."
       />
       {query.length > 0 && (
-        <i onClick={() => setQuery("")} className="ri-close-line"></i>
+        <i onClick={clearInput} className="ri-close-line"></i>
       )}
 
       <div className="absolute w-full lg:w-3/4 max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto font-semibold rounded-lg">
         {search.map((s, i) => (
-    <Link to={`/${s.media_type || title}/details/${s.id}`}
+          <Link
+            to={`/${s.media_type || title}/details/${s.id}`}
             key={i}
             className="block p-5 bg-zinc-200 border-b-2 text-zinc-700  border-zinc-300 hover:text-zinc-900 w-full lg:w-[75%]"
           >
