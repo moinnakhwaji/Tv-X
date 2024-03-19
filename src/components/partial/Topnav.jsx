@@ -26,8 +26,8 @@ function Topnav() {
       <i className="ri-search-fill text-zinc-400 mx-4"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
-        value={query}
-        className="text-xl border-none outline-none p-2 rounded-md bg-transparent w-full lg:w-[70%] xlg:w-[60%]  text-white"
+        va
+        className="text-xl border-none outline-none p-2 rounded-md  w-full lg:w-[70%] xlg:w-[60%]  text-white"
         type="text"
         placeholder="Search here..."
       />
@@ -39,7 +39,7 @@ function Topnav() {
         {search.map((s, i) => (
     <Link to={`/${s.media_type || title}/details/${s.id}`}
             key={i}
-            className="block p-5 bg-zinc-200 border-b-2 text-zinc-700 border-zinc-300 hover:text-zinc-900 w-full lg:w-[75%]"
+            className="block p-5 bg-zinc-200 border-b-2 text-zinc-700  border-zinc-300 hover:text-zinc-900 w-full lg:w-[75%]"
           >
             <img
               className="w-20 h-20 rounded-lg shadow-lg"
@@ -52,7 +52,7 @@ function Topnav() {
               }
               alt=""
             />
-            <span className="capitalize text-md text-black">
+            <span className="capitalize text-md text-black bg-[#e4e4e7]">
               {s.original_title || s.name || s.title || s.original_name}
             </span>
           </Link>
